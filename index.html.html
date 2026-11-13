@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Aakash & Sonal — Wedding Invitation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-ruby is-locked">
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Opening Gate -->
+  <section id="opening-gate" class="opening-gate" aria-label="Invitation Cover">
+    <div class="opening-media-wrap">
+      <video id="opening-video" class="opening-video" playsinline muted preload="metadata"></video>
+      <img id="opening-poster" class="opening-poster" alt="Cover" hidden />
+      <div class="opening-backdrop" aria-hidden="true"></div>
+    </div>
+
+    <div class="opening-frame">
+      <div class="opening-card">
+        <p class="eyebrow" data-bind="eventType">Wedding Invitation</p>
+        <h1 class="opening-names">
+          <span data-bind="personOne">Aakash</span>
+          <span class="ampersand" data-bind="conjunction">&</span>
+          <span data-bind="personTwo">Sonal</span>
+        </h1>
+        <p class="opening-date" data-bind="displayDate">Sunday, 20 December 2026</p>
+
+        <div class="opening-actions">
+          <button type="button" id="open-invitation-btn" class="btn-primary">
+            <span data-bind="openButton">Open Invitation</span>
+          </button>
+          <button type="button" id="skip-opening-btn" class="btn-ghost" hidden>
+            <span data-bind="skipButton">Skip</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Bar (केवल भाषा बदलने का बटन रहेगा, संगीत का बटन हटा दिया गया है) -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <button type="button" id="lang-toggle-btn" class="pill-control">
+        <span data-bind="langToggle">हिन्दी</span>
+      </button>
+    </div>
+  </header>
+  <audio id="bg-music" loop preload="auto"></audio>
+
+  <!-- Main Content -->
+  <main id="invitation-main" class="invitation-main">
+    <!-- Hero -->
+    <section class="section-velvet hero-section">
+      <div class="central-column hero-column reveal-on-scroll">
+        <p class="eyebrow" data-bind="eventType">Wedding Invitation</p>
+        <h1 class="hero-names">
+          <span class="hero-name-line" data-bind="personOne">Aakash</span>
+          <span class="hero-conjunction" data-bind="conjunction">&</span>
+          <span class="hero-name-line" data-bind="personTwo">Sonal</span>
+        </h1>
+        <p class="hero-date" data-bind="displayDate">Sunday, 20 December 2026</p>
+        <p class="hero-subdate" data-bind="displayTime">From 10:00 AM IST onwards</p>
+        <a href="#letter-section" class="scroll-cue">
+          <span data-bind="scrollCue">Scroll to read</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Letter -->
+    <section id="letter-section" class="section-wine letter-section">
+      <div class="central-column">
+        <div class="envelope-stage reveal-on-scroll">
+          <article class="paper-card letter-card">
+            <div class="paper-inner-border">
+              <p class="card-kicker" data-bind="letterKicker">With Blessings</p>
+              <p class="letter-salutation" data-bind="letterSalutation">Dear Family & Friends,</p>
+              <div id="letter-body" class="letter-body"></div>
+              <footer class="letter-signature-block">
+                <span class="letter-signoff" data-bind="letterSignOff">Warmly,</span>
+                <span class="letter-signature" data-bind="letterSignature">Aakash & Sonal</span>
+              </footer>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Date & Calendar -->
+    <section id="date-section" class="section-velvet date-section">
+      <div class="central-column reveal-on-scroll">
+        <article class="paper-card calendar-card">
+          <div class="paper-inner-border">
+            <p class="card-kicker" data-bind="eventType">Wedding Invitation</p>
+            <h2 class="section-title" data-bind="calendarMonthLabel">December 2026</h2>
+            <p class="calendar-exact-date" data-bind="displayDate">Sunday, 20 December 2026</p>
+            <p class="calendar-exact-time" data-bind="displayTime">From 10:00 AM IST onwards</p>
+
+            <div class="calendar-grid-wrap">
+              <div id="calendar-weekdays" class="calendar-weekdays"></div>
+              <div id="calendar-days" class="calendar-days"></div>
+            </div>
+
+            <div class="countdown-box">
+              <p class="countdown-label" data-bind="countdownHeading">Counting Down</p>
+              <div id="countdown-timer" class="countdown-timer">
+                <div class="countdown-unit">
+                  <span id="cd-days" class="countdown-value">--</span>
+                  <span class="countdown-unit-label" data-bind="days">Days</span>
+                </div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-unit">
+                  <span id="cd-hours" class="countdown-value">--</span>
+                  <span class="countdown-unit-label" data-bind="hours">Hours</span>
+                </div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-unit">
+                  <span id="cd-minutes" class="countdown-value">--</span>
+                  <span class="countdown-unit-label" data-bind="minutes">Minutes</span>
+                </div>
+              </div>
+              <p id="countdown-status-msg" class="countdown-status-msg" hidden></p>
+            </div>
+
+            <div class="calendar-cta-wrap">
+              <button type="button" id="download-ics-btn" class="btn-ruby">
+                <span data-bind="addToCalendar">Add to Calendar (.ics)</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule-section" class="section-wine schedule-section">
+      <div class="central-column reveal-on-scroll">
+        <header class="section-header-light">
+          <p class="eyebrow" data-bind="scheduleSubheading">Sunday, 20 December 2026</p>
+          <h2 class="section-title-light" data-bind="scheduleHeading">Wedding Programme</h2>
+        </header>
+        <ol id="schedule-timeline" class="timeline-list"></ol>
+      </div>
+    </section>
+
+    <!-- Venue -->
+    <section id="venue-section" class="section-velvet venue-section">
+      <div class="central-column reveal-on-scroll">
+        <article class="paper-card venue-card">
+          <div class="paper-inner-border">
+            <p class="card-kicker" data-bind="venueHeading">The Venue</p>
+            <h2 class="section-title" data-bind="venueName">Ashoka Barat Ghar</h2>
+            <address class="venue-address" data-bind="venueAddress">3, Thimayya Marg, New Delhi</address>
+            <div class="venue-actions">
+              <a id="venue-map-link" class="btn-ruby" href="#" target="_blank" rel="noopener">
+                <span data-bind="openMap">Open Map</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <footer class="section-wine closing-section">
+      <div class="central-column closing-column reveal-on-scroll">
+        <p class="eyebrow" data-bind="closingHeading">We Look Forward</p>
+        <p class="closing-names" data-bind="fullTitle">Aakash & Sonal</p>
+        <p class="closing-date" data-bind="displayDate">Sunday, 20 December 2026</p>
+        <p class="closing-note" data-bind="closingNote">With love from both families.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
